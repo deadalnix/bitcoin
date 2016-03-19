@@ -28,7 +28,6 @@ import asyncore
 import time
 import sys
 import random
-from binascii import hexlify, unhexlify
 from io import BytesIO
 from codecs import encode
 import hashlib
@@ -239,7 +238,7 @@ def ser_int_vector(l):
 
 # Deserialize from a hex string representation (eg from RPC)
 def FromHex(obj, hex_string):
-    obj.deserialize(BytesIO(unhexlify(hex_string.encode('ascii'))))
+    obj.deserialize(BytesIO(binascii.unhexlify(hex_string.encode('ascii'))))
     return obj
 
 # Convert a binary-serializable object to hex (eg for submission via RPC)

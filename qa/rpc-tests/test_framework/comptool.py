@@ -2,10 +2,13 @@
 # Copyright (c) 2015-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
+#
+
 from .mininode import *
 from .blockstore import BlockStore, TxStore
 from .util import p2p_port
 import time
+
 '''
 This is a tool for comparing two or more bitcoinds to each other
 using a script provided.
