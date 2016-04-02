@@ -82,7 +82,7 @@ def ser_string(s):
         return struct.pack("B", len(s)) + s
     elif len(s) < 0x10000:
         return struct.pack("<BH", 253, len(s)) + s
-    elif len(s) < 0x100000000:
+    elif len(s) < 0x100000000L:
         return struct.pack("<BI", 254, len(s)) + s
     return struct.pack("<BQ", 255, len(s)) + s
 
@@ -138,7 +138,7 @@ def ser_vector(l):
         r = struct.pack("B", len(l))
     elif len(l) < 0x10000:
         r = struct.pack("<BH", 253, len(l))
-    elif len(l) < 0x100000000:
+    elif len(l) < 0x100000000L:
         r = struct.pack("<BI", 254, len(l))
     else:
         r = struct.pack("<BQ", 255, len(l))
@@ -168,7 +168,7 @@ def ser_uint256_vector(l):
         r = struct.pack("B", len(l))
     elif len(l) < 0x10000:
         r = struct.pack("<BH", 253, len(l))
-    elif len(l) < 0x100000000:
+    elif len(l) < 0x100000000L:
         r = struct.pack("<BI", 254, len(l))
     else:
         r = struct.pack("<BQ", 255, len(l))
@@ -198,7 +198,7 @@ def ser_string_vector(l):
         r = struct.pack("B", len(l))
     elif len(l) < 0x10000:
         r = struct.pack("<BH", 253, len(l))
-    elif len(l) < 0x100000000:
+    elif len(l) < 0x100000000L:
         r = struct.pack("<BI", 254, len(l))
     else:
         r = struct.pack("<BQ", 255, len(l))
@@ -228,7 +228,7 @@ def ser_int_vector(l):
         r = struct.pack("B", len(l))
     elif len(l) < 0x10000:
         r = struct.pack("<BH", 253, len(l))
-    elif len(l) < 0x100000000:
+    elif len(l) < 0x100000000L:
         r = struct.pack("<BI", 254, len(l))
     else:
         r = struct.pack("<BQ", 255, len(l))
